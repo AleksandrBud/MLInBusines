@@ -1,0 +1,88 @@
+[2020-Jun-06 13:14:44] 127.0.0.1 POST http /predict? 5xx SERVER ERROR
+Traceback (most recent call last):
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/app.py", line 33, in predict
+    h2o_df.to_dict(orient='records')
+AttributeError: 'H2OFrame' object has no attribute 'to_dict'
+
+[2020-Jun-06 13:24:52] 127.0.0.1 POST http /predict? 5xx SERVER ERROR
+Traceback (most recent call last):
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/wrappers/json.py", line 119, in get_json
+    rv = self.json_module.loads(data)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/json/__init__.py", line 253, in loads
+    return _json.loads(s, **kwargs)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 535, in loads
+    return cls(encoding=encoding, **kw).decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+  File "/usr/lib/python3/dist-packages/simplejson/scanner.py", line 79, in scan_once
+    return _scan_once(string, idx)
+  File "/usr/lib/python3/dist-packages/simplejson/scanner.py", line 44, in _scan_once
+    return parse_object((string, idx + 1), encoding, strict,
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 209, in JSONObject
+    raise JSONDecodeError("Expecting ',' delimiter or '}'", s, end - 1)
+simplejson.errors.JSONDecodeError: Expecting ',' delimiter or '}': line 5 column 19 (char 69)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/app.py", line 29, in predict
+    json_input = request.json
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/wrappers/json.py", line 69, in json
+    return self.get_json()
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/wrappers/json.py", line 128, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/wrappers.py", line 25, in on_json_loading_failed
+    raise BadRequest("Failed to decode JSON object: {0}".format(e))
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting ',' delimiter or '}': line 5 column 19 (char 69)
+
+[2020-Jun-06 13:29:54] 127.0.0.1 POST http /predict? 5xx SERVER ERROR
+Traceback (most recent call last):
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/wrappers/json.py", line 119, in get_json
+    rv = self.json_module.loads(data)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/json/__init__.py", line 253, in loads
+    return _json.loads(s, **kwargs)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 535, in loads
+    return cls(encoding=encoding, **kw).decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+  File "/usr/lib/python3/dist-packages/simplejson/scanner.py", line 79, in scan_once
+    return _scan_once(string, idx)
+  File "/usr/lib/python3/dist-packages/simplejson/scanner.py", line 44, in _scan_once
+    return parse_object((string, idx + 1), encoding, strict,
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 209, in JSONObject
+    raise JSONDecodeError("Expecting ',' delimiter or '}'", s, end - 1)
+simplejson.errors.JSONDecodeError: Expecting ',' delimiter or '}': line 5 column 19 (char 69)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/app.py", line 28, in predict
+    json_input = request.json
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/wrappers/json.py", line 69, in json
+    return self.get_json()
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/werkzeug/wrappers/json.py", line 128, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/wrappers.py", line 25, in on_json_loading_failed
+    raise BadRequest("Failed to decode JSON object: {0}".format(e))
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting ',' delimiter or '}': line 5 column 19 (char 69)
+
