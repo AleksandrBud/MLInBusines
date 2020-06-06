@@ -1,10 +1,11 @@
+import h2o
+import logging
+import traceback
+import time
 from flask import Flask, request, jsonify
 from process_data import process_record
 from logging.handlers import RotatingFileHandler
 from time import strftime
-import h2o
-import logging
-import traceback
 
 
 app = Flask(__name__)
@@ -25,6 +26,11 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    curr_datatime = strftime('[%Y-%b-%d %H:%M:%S]')
+    ip_adr = request.headers.get('X-Forwarded For', request.remote_addr)
+    logger.info(f'{curr_datatime} request from {ip_adr}: {request.json}')
+    start_pred = time.time()
+
     json_input = request.json
     prc_date = process_record(json_input)
     id_v = json_input['ID']
@@ -32,6 +38,12 @@ def predict():
     predict_val = model_my.predict(h2o_df)
     value = predict_val.as_data_frame()['predict'][0].astype(float)
     result = dict(ID=id_v, ClaimInd=value)
+
+    end_predict = time.time()
+    duration = round(end_predict - start_pred, 6)
+    curr_datatime = strftime('[%Y-%b-%d %H:%M:%S]')
+    logger.info(f'{curr_datatime} process time {duration} msec: {request.json}\n')
+
     return jsonify(result)
 
 

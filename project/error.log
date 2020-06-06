@@ -86,3 +86,17 @@ Traceback (most recent call last):
     raise BadRequest("Failed to decode JSON object: {0}".format(e))
 werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting ',' delimiter or '}': line 5 column 19 (char 69)
 
+[2020-Jun-06 13:55:20] request from 127.0.0.1: {'ID': 1, 'Exposure': 0.583, 'LicAge': 366, 'RecordBeg': '2004-06-01', 'RecordEnd': 0, 'VehAge': '2', 'Gender': 'Female', 'MariStat': 'Other', 'SocioCateg': 'CSP1', 'VehUsage': 'Professional', 'DrivAge': 55, 'HasKmLimit': 0, 'BonusMalus': 72, 'VehBody': 'sedan', 'VehPrice': 'D ', 'VehEngine': 'injection', 'VehEnergy': 'regular', 'VehMaxSpeed': '160-170 km/h', 'VehClass': 'B', 'ClaimAmount': 0.0, 'RiskVar': 15.0, 'Garage': 'None', 'ClaimInd': 0, 'Dataset': 1, 'DeducType': 0, 'ClaimNbResp': 0, 'ClaimNbNonResp': 0, 'ClaimNbParking': 0, 'ClaimNbFireTheft': 0, 'ClaimNbWindscreen': 0, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-Jun-06 13:55:20] 127.0.0.1 POST http /predict? 5xx SERVER ERROR
+Traceback (most recent call last):
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aleksandr/Yandex.Disk/github/MLInBusines/project/app.py", line 32, in predict
+    start_pred = time()
+TypeError: 'module' object is not callable
+
+[2020-Jun-06 13:56:43] request from 127.0.0.1: {'ID': 1, 'Exposure': 0.583, 'LicAge': 366, 'RecordBeg': '2004-06-01', 'RecordEnd': 0, 'VehAge': '2', 'Gender': 'Female', 'MariStat': 'Other', 'SocioCateg': 'CSP1', 'VehUsage': 'Professional', 'DrivAge': 55, 'HasKmLimit': 0, 'BonusMalus': 72, 'VehBody': 'sedan', 'VehPrice': 'D ', 'VehEngine': 'injection', 'VehEnergy': 'regular', 'VehMaxSpeed': '160-170 km/h', 'VehClass': 'B', 'ClaimAmount': 0.0, 'RiskVar': 15.0, 'Garage': 'None', 'ClaimInd': 0, 'Dataset': 1, 'DeducType': 0, 'ClaimNbResp': 0, 'ClaimNbNonResp': 0, 'ClaimNbParking': 0, 'ClaimNbFireTheft': 0, 'ClaimNbWindscreen': 0, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-Jun-06 13:56:45] process time 2.24088 msec: {'ID': 1, 'Exposure': 0.583, 'LicAge': 366, 'RecordBeg': '2004-06-01', 'RecordEnd': 0, 'VehAge': '2', 'Gender': 'Female', 'MariStat': 'Other', 'SocioCateg': 'CSP1', 'VehUsage': 'Professional', 'DrivAge': 55, 'HasKmLimit': 0, 'BonusMalus': 72, 'VehBody': 'sedan', 'VehPrice': 'D ', 'VehEngine': 'injection', 'VehEnergy': 'regular', 'VehMaxSpeed': '160-170 km/h', 'VehClass': 'B', 'ClaimAmount': 0.0, 'RiskVar': 15.0, 'Garage': 'None', 'ClaimInd': 0, 'Dataset': 1, 'DeducType': 0, 'ClaimNbResp': 0, 'ClaimNbNonResp': 0, 'ClaimNbParking': 0, 'ClaimNbFireTheft': 0, 'ClaimNbWindscreen': 0, 'OutUseNb': 0, 'RiskArea': 0}
+
